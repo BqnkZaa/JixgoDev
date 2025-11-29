@@ -31,7 +31,7 @@ export async function GET() {
             sectionTitle: row[0] || 'About Me',
             heading: row[1] || '',
             description: row[2] || '',
-            profileImageUrl: row[3] || '/profile.png',
+            profileImageUrl: row[3] || 'https://ui-avatars.com/api/?name=Profile&size=400&background=3b82f6&color=fff',
             cvLinkText: row[4] || 'Download CV',
             cvUrl: row[5] || '#',
         };

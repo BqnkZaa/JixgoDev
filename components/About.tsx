@@ -35,7 +35,7 @@ export default function About() {
                     sectionTitle: "About Me",
                     heading: "About Me",
                     description: "Welcome to my portfolio!",
-                    profileImageUrl: "/profile.png",
+                    profileImageUrl: "https://ui-avatars.com/api/?name=Profile&size=400&background=3b82f6&color=fff",
                     cvLinkText: "Download CV",
                     cvUrl: "#",
                 });

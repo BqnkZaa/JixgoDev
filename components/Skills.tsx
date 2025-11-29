@@ -1,7 +1,19 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { FaHtml5, FaCss3Alt, FaJs, FaReact, FaVuejs, FaNodeJs, FaDatabase, FaGitAlt, FaDocker, FaLaptopCode } from "react-icons/fa";
+import {
+    FaHtml5, FaCss3Alt, FaJs, FaReact, FaVuejs, FaNodeJs,
+    FaDatabase, FaGitAlt, FaDocker, FaLaptopCode, FaAngular,
+    FaPython, FaJava, FaPhp, FaLaravel, FaWordpress, FaAws,
+    FaSass, FaBootstrap, FaFigma, FaNpm, FaYarn
+} from "react-icons/fa";
+import {
+    SiTypescript, SiNextdotjs, SiTailwindcss, SiMongodb,
+    SiPostgresql, SiMysql, SiRedis, SiGraphql, SiFirebase,
+    SiVercel, SiNetlify, SiKubernetes, SiJenkins, SiGithubactions,
+    SiVite, SiWebpack, SiBabel, SiEslint, SiPrettier, SiJest,
+    SiExpress, SiNestjs, SiDjango, SiFlask, SiSpring
+} from "react-icons/si";
 import { useEffect, useState } from "react";
 import React from "react";
 
@@ -13,15 +25,71 @@ interface Skill {
 
 const getIconComponent = (iconName: string): React.ReactElement => {
     const iconMap: { [key: string]: React.ReactElement } = {
+        // Frontend Basics
         'FaHtml5': <FaHtml5 />,
         'FaCss3Alt': <FaCss3Alt />,
         'FaJs': <FaJs />,
+        'SiTypescript': <SiTypescript />,
+
+        // CSS Frameworks & Preprocessors
+        'FaSass': <FaSass />,
+        'FaBootstrap': <FaBootstrap />,
+        'SiTailwindcss': <SiTailwindcss />,
+
+        // Frontend Frameworks
         'FaReact': <FaReact />,
+        'FaAngular': <FaAngular />,
         'FaVuejs': <FaVuejs />,
+        'SiNextdotjs': <SiNextdotjs />,
+
+        // Backend
         'FaNodeJs': <FaNodeJs />,
+        'SiExpress': <SiExpress />,
+        'SiNestjs': <SiNestjs />,
+        'FaPython': <FaPython />,
+        'SiDjango': <SiDjango />,
+        'SiFlask': <SiFlask />,
+        'FaJava': <FaJava />,
+        'SiSpring': <SiSpring />,
+        'FaPhp': <FaPhp />,
+        'FaLaravel': <FaLaravel />,
+
+        // Databases
         'FaDatabase': <FaDatabase />,
+        'SiMongodb': <SiMongodb />,
+        'SiPostgresql': <SiPostgresql />,
+        'SiMysql': <SiMysql />,
+        'SiRedis': <SiRedis />,
+        'SiGraphql': <SiGraphql />,
+        'SiFirebase': <SiFirebase />,
+
+        // DevOps & Tools
         'FaGitAlt': <FaGitAlt />,
         'FaDocker': <FaDocker />,
+        'SiKubernetes': <SiKubernetes />,
+        'SiJenkins': <SiJenkins />,
+        'SiGithubactions': <SiGithubactions />,
+        'FaAws': <FaAws />,
+        'SiVercel': <SiVercel />,
+        'SiNetlify': <SiNetlify />,
+
+        // Build Tools & Package Managers
+        'SiVite': <SiVite />,
+        'SiWebpack': <SiWebpack />,
+        'SiBabel': <SiBabel />,
+        'FaNpm': <FaNpm />,
+        'FaYarn': <FaYarn />,
+
+        // Code Quality & Testing
+        'SiEslint': <SiEslint />,
+        'SiPrettier': <SiPrettier />,
+        'SiJest': <SiJest />,
+
+        // Design & CMS
+        'FaFigma': <FaFigma />,
+        'FaWordpress': <FaWordpress />,
+
+        // Default
         'FaLaptopCode': <FaLaptopCode />,
     };
     return iconMap[iconName] || <FaLaptopCode />;
