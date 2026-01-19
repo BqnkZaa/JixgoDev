@@ -127,9 +127,13 @@ export default function Projects() {
 
             {filteredProjects.length > 0 ? (
                 <div
-                    className="flex overflow-hidden"
+                    className="flex overflow-hidden cursor-grab active:cursor-grabbing"
                     onMouseEnter={() => setIsHovered(true)}
                     onMouseLeave={() => setIsHovered(false)}
+                    style={{
+                        WebkitOverflowScrolling: 'touch',
+                        scrollBehavior: 'smooth'
+                    }}
                 >
                     <motion.div
                         className="flex gap-8 px-6"
@@ -139,8 +143,9 @@ export default function Projects() {
                         {displayProjects.map((project, index) => (
                             <motion.div
                                 key={index}
-                                className="w-[350px] h-[450px] flex flex-col rounded-2xl bg-white dark:bg-gray-800 shadow-[0_10px_30px_-10px_rgba(0,0,0,0.05)] hover:shadow-[0_20px_40px_-10px_rgba(0,0,0,0.1)] flex-shrink-0 overflow-hidden group cursor-pointer transition-all duration-300"
+                                className="w-[350px] md:w-[350px] sm:w-[300px] h-[450px] md:h-[450px] sm:h-[420px] flex flex-col rounded-2xl bg-white dark:bg-gray-800 shadow-[0_10px_30px_-10px_rgba(0,0,0,0.05)] hover:shadow-[0_20px_40px_-10px_rgba(0,0,0,0.1)] flex-shrink-0 overflow-hidden group cursor-pointer transition-all duration-300 touch-manipulation"
                                 whileHover={{ y: -10, transition: { duration: 0.3 } }}
+                                whileTap={{ scale: 0.98 }}
                                 onClick={() => {
                                     if (project.links?.demo && project.links.demo !== '#') {
                                         window.open(project.links.demo, '_blank', 'noopener,noreferrer');
@@ -154,14 +159,11 @@ export default function Projects() {
                                             src={project.imageUrl}
                                             alt={project.title}
                                             className="w-full h-full object-cover"
-                                            onError={(e) => {
-                                                // Fallback to icon if image fails to load
-                                                e.currentTarget.style.display = 'none';
-                                                e.currentTarget.parentElement!.innerHTML = project.icon;
-                                            }}
                                         />
                                     ) : (
-                                        project.icon
+                                        <div className="text-6xl">
+                                            {project.icon}
+                                        </div>
                                     )}
                                 </div>
 

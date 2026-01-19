@@ -158,4 +158,255 @@ body {
   .about-grid {
     grid-template-columns: 1fr;
   }
+
+  /* Mobile optimizations for About section */
+  .about {
+    margin: 1rem 3%;
+    padding: 3rem 1.5rem;
+    border-radius: 20px;
+  }
+
+  .about-img {
+    height: 280px;
+  }
+
+  .section-title {
+    font-size: 1.75rem;
+    margin-bottom: 2rem;
+  }
+}
+
+/* Mobile-First Responsive Enhancements */
+
+/* Safe Area Support for Notched Devices */
+@supports (padding: env(safe-area-inset-top)) {
+  body {
+    padding-top: env(safe-area-inset-top);
+    padding-bottom: env(safe-area-inset-bottom);
+    padding-left: env(safe-area-inset-left);
+    padding-right: env(safe-area-inset-right);
+  }
+}
+
+/* Touch-Friendly Interactions */
+@media (hover: none) and (pointer: coarse) {
+  /* Increase touch target sizes */
+  button,
+  a {
+    min-height: 44px;
+    min-width: 44px;
+  }
+
+  /* Better tap highlight */
+  * {
+    -webkit-tap-highlight-color: rgba(59, 130, 246, 0.1);
+  }
+}
+
+/* Small Mobile (< 640px) */
+@media (max-width: 640px) {
+  body {
+    font-size: 16px; /* Prevent iOS zoom */
+  }
+
+  .container {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+
+  /* Hero Section Mobile */
+  .text-5xl {
+    font-size: 2.5rem !important;
+  }
+
+  .text-7xl {
+    font-size: 3rem !important;
+  }
+
+  .text-4xl {
+    font-size: 2rem !important;
+  }
+
+  .text-6xl {
+    font-size: 2.5rem !important;
+  }
+
+  /* About Section Mobile */
+  .about {
+    margin: 1rem 2%;
+    padding: 2rem 1rem;
+  }
+
+  .about-img {
+    height: 250px;
+  }
+
+  /* Projects Cards Mobile */
+  .w-\[350px\] {
+    width: 300px !important;
+  }
+
+  .h-\[450px\] {
+    height: 420px !important;
+  }
+
+  /* Skills Cards Mobile */
+  .px-8 {
+    padding-left: 1rem !important;
+    padding-right: 1rem !important;
+  }
+
+  .py-4 {
+    padding-top: 0.75rem !important;
+    padding-bottom: 0.75rem !important;
+  }
+
+  /* Contact Form Mobile */
+  .max-w-5xl {
+    max-width: 100% !important;
+  }
+
+  .gap-12 {
+    gap: 2rem !important;
+  }
+
+  /* Section Padding Mobile */
+  .py-20 {
+    padding-top: 3rem !important;
+    padding-bottom: 3rem !important;
+  }
+}
+
+/* Tablet (641px - 1024px) */
+@media (min-width: 641px) and (max-width: 1024px) {
+  .about {
+    padding: 4rem 3rem;
+    margin: 1.5rem 4%;
+  }
+
+  .container {
+    padding-left: 2rem;
+    padding-right: 2rem;
+  }
+}
+
+/* Prevent Horizontal Scroll */
+* {
+  max-width: 100%;
+}
+
+html,
+body {
+  overflow-x: hidden;
+  max-width: 100vw;
+}
+
+/* Better Table Overflow on Mobile */
+table {
+  display: block;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+/* Prevent iOS Input Zoom */
+input[type="text"],
+input[type="email"],
+input[type="tel"],
+textarea,
+select {
+  font-size: 16px !important;
+}
+
+/* PWA Standalone Display Adjustments */
+@media (display-mode: standalone) {
+  body {
+    padding-top: env(safe-area-inset-top, 20px);
+  }
+
+  /* Add some top spacing when in PWA mode */
+  nav {
+    padding-top: calc(env(safe-area-inset-top, 0px) + 1rem);
+  }
+}
+
+/* Improved Mobile Navigation */
+@media (max-width: 768px) {
+  nav {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+
+  .glass {
+    backdrop-filter: blur(20px);
+  }
+}
+
+/* Better Mobile Scrolling */
+@media (max-width: 768px) {
+  section {
+    scroll-margin-top: 80px; /* Account for fixed navbar */
+  }
+}
+
+/* Mobile-Optimized Typography */
+@media (max-width: 640px) {
+  h1 {
+    font-size: 2rem;
+    line-height: 1.2;
+  }
+
+  h2 {
+    font-size: 1.75rem;
+    line-height: 1.3;
+  }
+
+  h3 {
+    font-size: 1.25rem;
+    line-height: 1.4;
+  }
+
+  p {
+    font-size: 1rem;
+    line-height: 1.6;
+  }
+}
+
+/* Touch-Optimized Buttons */
+@media (max-width: 768px) {
+  button,
+  .btn-skew,
+  a[class*="btn"],
+  a[class*="button"] {
+    padding: 0.875rem 1.5rem;
+    min-height: 48px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+  }
+}
+
+/* Mobile Card Spacing */
+@media (max-width: 640px) {
+  .gap-6 {
+    gap: 1rem !important;
+  }
+
+  .gap-8 {
+    gap: 1.5rem !important;
+  }
+
+  .space-y-8 > * + * {
+    margin-top: 1.5rem !important;
+  }
+}
+
+/* Better Mobile Shadows */
+@media (max-width: 768px) {
+  .shadow-lg {
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08) !important;
+  }
+
+  .shadow-\[0_10px_30px_-10px_rgba\(0\,0\,0\,0\.05\)\] {
+    box-shadow: 0 6px 20px -8px rgba(0, 0, 0, 0.08) !important;
+  }
 }

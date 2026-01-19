@@ -124,34 +124,38 @@ export default function Contact() {
                     </p>
                 </motion.div>
 
-                <div className="flex flex-col md:flex-row gap-12 max-w-5xl mx-auto">
+                <div className="flex flex-col md:flex-row gap-6 md:gap-12 max-w-5xl mx-auto">
                     <motion.div
                         initial={{ opacity: 0, x: -20 }}
                         whileInView={{ opacity: 1, x: 0 }}
                         viewport={{ once: true }}
                         transition={{ duration: 0.5 }}
-                        className="md:w-1/2 space-y-8"
+                        className="md:w-1/2 space-y-4 md:space-y-8 pl-4 md:pl-9 "
                     >
                         {contactInfo.email && (
-                            <div className="flex items-start gap-4">
+                            <div className="flex items-start gap-4 touch-manipulation">
                                 <div className="p-3 bg-white dark:bg-black rounded-lg shadow-sm">
                                     <Mail className="text-primary" size={24} />
                                 </div>
                                 <div>
                                     <h3 className="font-bold text-lg mb-1">Email</h3>
-                                    <p className="text-gray-600 dark:text-gray-400">{contactInfo.email}</p>
+                                    <a href={`mailto:${contactInfo.email}`} className="text-gray-600 dark:text-gray-400 hover:text-primary transition-colors">
+                                        {contactInfo.email}
+                                    </a>
                                 </div>
                             </div>
                         )}
 
                         {contactInfo.phone && (
-                            <div className="flex items-start gap-4">
+                            <div className="flex items-start gap-4 touch-manipulation">
                                 <div className="p-3 bg-white dark:bg-black rounded-lg shadow-sm">
                                     <Phone className="text-primary" size={24} />
                                 </div>
                                 <div>
                                     <h3 className="font-bold text-lg mb-1">Phone</h3>
-                                    <p className="text-gray-600 dark:text-gray-400">{contactInfo.phone}</p>
+                                    <a href={`tel:${contactInfo.phone}`} className="text-gray-600 dark:text-gray-400 hover:text-primary transition-colors">
+                                        {contactInfo.phone}
+                                    </a>
                                 </div>
                             </div>
                         )}
